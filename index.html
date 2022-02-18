@@ -265,6 +265,19 @@
 
           </section>
           <section>
+              <aside class="notes">
+                  N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
+
+                  N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
+
+                  MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with name App\Controller\*
+                  Inheritance: Classes with name App\Application\*Handler must extend class with name App\Application\AbstractHandler
+                  Composition: Classes with name App\Domain\Entity\* must implement class with name App\Domain\Entity\EntityInterface
+
+                  Layered Architecture: ensure that the inner layers do not depend on the outer ones
+
+                  Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes with name App\Infrastructure\*
+              </aside>
             <h3>Enforcing the "onion"</h3>
             <a href="https://github.com/carlosas/phpat">PHP AT</a>
               <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
@@ -284,21 +297,9 @@
             ->build();
     }
 }</code></pre>
-              <aside>
-                  N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
-
-                  N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
-
-                  MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with name App\Controller\*
-                  Inheritance: Classes with name App\Application\*Handler must extend class with name App\Application\AbstractHandler
-                  Composition: Classes with name App\Domain\Entity\* must implement class with name App\Domain\Entity\EntityInterface
-
-                  Layered Architecture: ensure that the inner layers do not depend on the outer ones
-
-                  Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes with name App\Infrastructure\*
-              </aside>
           </section>
             <section>
+
                 <h3>EventSauce</h3>
                 <table>
                     <tr>
