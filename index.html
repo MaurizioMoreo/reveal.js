@@ -186,25 +186,29 @@
             <img
               class="r-stretch"
               src="img/ddd-onion.png"
-              width="500"
+              width="47%"
               alt="DDD Onion - Jeffrey Palermo"
             />
+              <aside class="notes">
+                  <ul>
+                      <li>Al centro il domain model, qui risiede la logica sottoforma di aggregati</li>
+                      <li>I servizi dell'applicazione, conoscono e interagiscono con gli aggregati per farli evolvere</li>
+                      <li>All'esterno abbiamo la UI/interfaccia di interazione con l'applicazione, i test, che mimano l'utente non conoscendo nulla dell'applicazione</li>
+                      <li>e infine l'infrastruttura, che è solo uno strumento per fare cose, che il db sia un file di testo o un server relazionale la logica di dominio non deve essere influenzata</li>
+                  </ul>
+              </aside>
           </section>
           <section>
             <h3>Presentation: API</h3>
             <h5>Open API + Stoplight</h5>
             <img
               style="float: left"
-              width="500"
-              src="img/stoplight.png"
+              width="47%"
+              src="img/stoplight-ui.png"
               alt="Stoplight"
             />
             <p>
               <ul>
-                <li>
-                  <a hre="https://swagger.io/specification/" target="_blank"
-                  >OpenAPI 3.0 Specs</a>  
-                </li>
                 <li>
                   <a href="https://stoplight.io/studio/">Stoplight Studio</a>
                 </li>
@@ -213,12 +217,36 @@
                     Openapi PSR7 Validator
                   </a>
                 </li>
+              <li>
+                  <a hre="https://swagger.io/specification/" target="_blank"
+                  >OpenAPI 3.0 Specs</a>
+              </li>
               </ul>
+
+
             </p>
+              <small>
+                  Rif. <a target="_blank" href="https://alessandrolai.dev/talks/2021-sfday-api-contracts-openapi-during-development/">API contracts: Leveraging OpenAPI during API development Ale Lai ©</a>
+              </small>
+              <aside class="notes">
+                  <ul>
+                      <li>Come strumento per realizzare la parte di UI usiamo il design by contract (rif. slide ale maggio 2021)</li>
+                      <li>Openapi PSR7/validator per request in ingresso anche in prod, in test testiamo le response per assicurarci di deployare in accordo con il contratto</li>
+                      <li>Usiamo OpenAPI 3.0 perchè siamo legati da cebe/php-openapi (1.6), ma la prossima release supporterà 3.1 (chicca sul nome del file e gitlab)</li>
+                      <li>Le novità della 3.1 includono la possibilità di indicare tipi multipli, permettendo di esprimere il nullable</li>
+                  </ul>
+              </aside>
           </section>
+            <section>
+                <img
+                        style="float: left"
+                        src="img/stoplight-code.png"
+                        alt="Stoplight"
+                />
+            </section>
           <section>
-            <img width="300" src="img/ddd-onion-2.png" class="aside" />
-            <p class="aside">
+            <img width="30%" src="img/ddd-onion-2.png" class="aside" />
+            <p>
               <quote>
                 <em>
                   "Nothing in an inner circle can know anything at all about
@@ -228,11 +256,36 @@
                 Robert C. Martin
               </quote>
             </p>
+              <aside class="notes">
+                Rinforzare il concetto che ciò che sta all'interno non conosce nulla dell'esterno, che è un utilizzatore.
+                  Nel nostro progetto abbiamo quindi cominciato a creare le classiche 3 directory radice, INFRASTRUCTURE/DOMAIN/APPLICATION
+                  Come possiamo fare però per evitare di contaminare i diversi namespace?
+
+                  Abbiamo bisogno di un tool che ci permetta di scrivere dei test di analisi statica per essere sicuri di
+                  non violare i principi del ddd.
+
+                  Quindi affiancamo a test unitari, integrazione, funzionali, e ai test di analisi statica di php
+                  dei test di analisi statica architetturale
+              </aside>
+
           </section>
           <section>
+              <aside class="notes">
+                  N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
+
+                  N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
+
+                  MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with name App\Controller\*
+                  Inheritance: Classes with name App\Application\*Handler must extend class with name App\Application\AbstractHandler
+                  Composition: Classes with name App\Domain\Entity\* must implement class with name App\Domain\Entity\EntityInterface
+
+                  Layered Architecture: ensure that the inner layers do not depend on the outer ones
+
+                  Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes with name App\Infrastructure\*
+              </aside>
             <h3>Enforcing the "onion"</h3>
             <a href="https://github.com/carlosas/phpat">PHP AT</a>
-            <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
+              <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
 {
     public function testCoreDomainDependencies(): Rule
     {
@@ -251,6 +304,7 @@
 }</code></pre>
           </section>
             <section>
+
                 <h3>EventSauce</h3>
                 <table>
                     <tr>
@@ -289,7 +343,7 @@ interface AggregateRootId
             </section>
             <section>
                 <h3>Aggregate Root ID - UUID</h3>
-                <pre class="php stretch"><code class="language-php">namespace Facile\Domain\Model;
+                <pre class="php stretch"><code class="language-php">namespace Facile\\Domain\Model;
 use EventSauce\EventSourcing\AggregateRootId;
 
 abstract class AbstractAggregateRootId implements AggregateRootId
