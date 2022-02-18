@@ -255,6 +255,12 @@
                 Rinforzare il concetto che ciò che sta all'interno non conosce nulla dell'esterno, che è un utilizzatore.
                   Nel nostro progetto abbiamo quindi cominciato a creare le classiche 3 directory radice, INFRASTRUCTURE/DOMAIN/APPLICATION
                   Come possiamo fare però per evitare di contaminare i diversi namespace?
+
+                  Abbiamo bisogno di un tool che ci permetta di scrivere dei test di analisi statica per essere sicuri di
+                  non violare i principi del ddd.
+
+                  Quindi affiancamo a test unitari, integrazione, funzionali, e ai test di analisi statica di php
+                  dei test di analisi statica architetturale
               </aside>
 
           </section>
@@ -280,6 +286,8 @@
 }</code></pre>
               <aside>
                   N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
+
+                  N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
 
                   MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with name App\Controller\*
                   Inheritance: Classes with name App\Application\*Handler must extend class with name App\Application\AbstractHandler
@@ -329,7 +337,7 @@ interface AggregateRootId
             </section>
             <section>
                 <h3>Aggregate Root ID - UUID</h3>
-                <pre class="php stretch"><code class="language-php">namespace Facile\Domain\Model;
+                <pre class="php stretch"><code class="language-php">namespace Facile\\Domain\Model;
 use EventSauce\EventSourcing\AggregateRootId;
 
 abstract class AbstractAggregateRootId implements AggregateRootId
