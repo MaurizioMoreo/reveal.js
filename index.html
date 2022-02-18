@@ -232,7 +232,7 @@
           <section>
             <h3>Enforcing the "onion"</h3>
             <a href="https://github.com/carlosas/phpat">PHP AT</a>
-            <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
+              <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
 {
     public function testCoreDomainDependencies(): Rule
     {
@@ -249,6 +249,34 @@
             ->build();
     }
 }</code></pre>
+              <pre><code class="language-php">
+class ClassSelector
+{
+    private const BASE_NS = 'Facile\Pagamenti';
+
+    private const DOMAIN_NS = self::BASE_NS . '\Domain';
+    private const APPLICATION_NS = self::BASE_NS . '\Application';
+    private const INFRASTRUCTURE_NS = self::BASE_NS . '\Infrastructure';
+
+    public const CONTEXT_CORE = 'Core';
+    public const CONTEXT_SISAL = 'Sisal';
+
+    /**
+     * @param ClassSelector::CONTEXT_* $context
+     */
+    private static function classesPattern(string $context): string
+    {
+        return '\\' . $context . '\\*';
+    }
+
+    /**
+     * @param ClassSelector::CONTEXT_* $context
+     */
+    public static function domainClasses(string $context): ClassNameSelector
+    {
+        return Selector::haveClassName(self::DOMAIN_NS . self::classesPattern($context));
+    }
+</code></pre>
           </section>
             <section>
                 <h3>EventSauce</h3>
