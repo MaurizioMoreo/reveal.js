@@ -340,7 +340,7 @@ interface AggregateRootId
             </section>
             <section>
                 <h3>Aggregate Root ID - UUID</h3>
-                <pre class="php stretch"><code class="language-php">namespace Facile\\Domain\Model;
+                <pre class="php stretch"><code class="language-php">namespace Facile\Domain\Model;
 use EventSauce\EventSourcing\AggregateRootId;
 
 abstract class AbstractAggregateRootId implements AggregateRootId
@@ -694,13 +694,12 @@ class Product implements AggregateRoot
         }
         
         $orderAdded = OrderAdded::create($command);
-            $this->recordThat($orderAdded);
-        }
-        
-        public function applyOrderAdded(OrderAdded $orderAdded): void
-        {
-            $this->order = new Order($orderAdded->getOrderId(), $orderAdded->getMoney());
-        }
+        $this->recordThat($orderAdded);
+    }
+
+    public function applyOrderAdded(OrderAdded $orderAdded): void
+    {
+        $this->order = new Order($orderAdded->getOrderId(), $orderAdded->getMoney());
     }
 }</code></pre>
             </section>
