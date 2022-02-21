@@ -15,9 +15,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-    
+
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/monokai-sublime.min.css">
 </head>
 <body>
 <div class="reveal">
@@ -26,7 +27,7 @@
             <h1>PHP+ES+CQRS+DDD = ?</h1>
             <h2>A planned strategy</h2>
             <p>
-<!--                <a href="https://alessandrolai.dev/">Alessandro Lai</a> / <a href="http://twitter.com/AlessandroLai">@AlessandroLai</a><br>-->
+                <!--                <a href="https://alessandrolai.dev/">Alessandro Lai</a> / <a href="http://twitter.com/AlessandroLai">@AlessandroLai</a><br>-->
                 <a href="https://gitlab.facile.it/pagamenti">Payments Team</a>
             </p>
             <small>
@@ -34,9 +35,9 @@
                     <a href="{{ event-link }}">Venerdì protetto</a> - February 18th 2022,
                     Facile.it (online)
                 </p>
-<!--                <p class="smaller">-->
-<!--                    <a href="https://joind.in/talk/TODO-CHANGEME">https://joind.in/talk/TODO-CHANGEME</a>-->
-<!--                </p>-->
+                <!--                <p class="smaller">-->
+                <!--                    <a href="https://joind.in/talk/TODO-CHANGEME">https://joind.in/talk/TODO-CHANGEME</a>-->
+                <!--                </p>-->
             </small>
         </section>
 
@@ -46,7 +47,7 @@
                 (TODO: team slide from Nico)
             </section>
         </section>
-        
+
         <section id="section-base-concepts">
             <section style="text-align: left">
                 <ol class="sections-list">
@@ -61,54 +62,53 @@
             <section>
                 <h3>Do we start from here?</h3>
                 <img
-                class="r-stretch"
-                src="img/hands-coding.png"
-                width="500"
-                alt="We start from coding?"
-              />                
+                        class="r-stretch"
+                        src="img/hands-coding.png"
+                        width="500"
+                        alt="We start from coding?"
+                />
             </section>
             <section>
                 <h3>No! We should start from here</h3>
                 <img
-                class="r-stretch"
-                src="img/domain-and-devs_1.png"
-                width="500"
-                alt="We start with Domains expert and Developers"
-              />                
+                        class="r-stretch"
+                        src="img/domain-and-devs_1.png"
+                        width="500"
+                        alt="We start with Domains expert and Developers"
+                />
             </section>
             <section>
                 <h3>Business Centric Approach</h3>
                 VS
                 <h3>Data Centric Approach</h3>
-            </section>            
+            </section>
             <section>
-                <h3>The evolution</h3>
-                <h3>DDD - CQRS - CQRS/ES</h3>
+                <h3>The evolution of DDD - CQRS - CQRS/ES</h3>
                 <img
-                class="r-stretch"
-                src="img/timeline.jpg"
-                width="500"
-                alt="We start with Domains expert and Developers"
-                />                
+                        class="stretch"
+                        src="img/timeline.jpg"
+                        alt="We start with Domains expert and Developers"
+                />
                 <br/>
-                <small>https://eventmodeling.org/about/history.jpg</small>
-                <br/>
-                <small>with the permission of the author</small>
-            </section>            
+                <small>
+                    <a href="https://eventmodeling.org/about/">
+                        https://eventmodeling.org/about/history.jpg
+                    </a>
+                    -
+                    with the permission of the author
+                </small>
+            </section>
             <section>
                 <h3>All concepts</h3>
-                <img
-                class="stretch"
-                src="img/all-concepts.png"
-                alt="All concepts"
-                />                
-            </section>            
+                <img class="stretch" src="img/all-concepts.png" alt="All concepts"/>
+            </section>
             <section>
-                <h3>New capacity to explore the Domain means New opportunity For Business and For Devs</h3>
-            </section>              
+                <h3>New opportunities</h3>
+                <p>New capacity to explore the Domain means <br> new opportunities for Business and Devs</p>
+            </section>
 
         </section>
-        
+
         <section id="section-starting-point">
             <section style="text-align: left">
                 <ol class="sections-list">
@@ -122,20 +122,20 @@
             <section>
                 <h3>Pagamenti 2</h3>
                 <ul>
-                <p>
-                  Provide a homogeneous interface for managing different payment and
-                  purchasing methods
-                </p>      
-                <div>   
+                    <p>
+                        Provide a homogeneous interface for managing different payment and
+                        purchasing methods
+                    </p>
+                    <div>   
                     <span style="float: left; width: 30%;">    
                         <p>How does it work?</p>
                     </span>
-                    <span  style="float: right;  width: 70%;">           
+                        <span style="float: right;  width: 70%;">           
                         <img style="float: left" src="img/seq-diagram-payment.png" alt="Payment"/>
                     </span>
-                </div>
-              </section>
-              <section>
+                    </div>
+            </section>
+            <section>
                 <h3>Aggregate & entities involved</h3>
                 <div style="margin-top: 2em;">
                     <span style="float: left; width: 50%; font-size: x-large;">
@@ -149,25 +149,25 @@
                             </div>
                         </div>
                     </span>
-                    <span  style="float: right;  width: 50%;">            
+                    <span style="float: right;  width: 50%;">            
                         <p>                
                             <p>Are entities immutable?</p>
-                            <p>What about state management?</p>                
+                            <p>What about state management?</p>
                         </p>
                     </span>
                 </div>
                 <aside class="notes">
-    
+
                 </aside>
-              </section>
-              <section>
+            </section>
+            <section>
                 <h3>Decommissioning Sisal from api.facile.it</h3>
                 <p>Why incorporate it?</p>
                 <p>Opportunity of limited area of intervention</p>
-              </section>
             </section>
         </section>
-        
+        </section>
+
         <section id="section-tools">
             <section style="text-align: left">
                 <ol class="sections-list">
@@ -178,111 +178,140 @@
                     <li>Conclusions</li>
                 </ol>
             </section>
-          <section>
-            <h3>The DDD "onion"</h3>
-            <img
-              class="r-stretch"
-              src="img/ddd-onion.png"
-              width="47%"
-              alt="DDD Onion - Jeffrey Palermo"
-            />
-              <aside class="notes">
-                  <ul>
-                      <li>Al centro il domain model, qui risiede la logica sottoforma di aggregati</li>
-                      <li>I servizi dell'applicazione, conoscono e interagiscono con gli aggregati per farli evolvere</li>
-                      <li>All'esterno abbiamo la UI/interfaccia di interazione con l'applicazione, i test, che mimano l'utente non conoscendo nulla dell'applicazione</li>
-                      <li>e infine l'infrastruttura, che è solo uno strumento per fare cose, che il db sia un file di testo o un server relazionale la logica di dominio non deve essere influenzata</li>
-                  </ul>
-              </aside>
-          </section>
-          <section>
-            <h3>Presentation: API</h3>
-            <h5>Open API + Stoplight</h5>
-            <img
-              style="float: left"
-              width="47%"
-              src="img/stoplight-ui.png"
-              alt="Stoplight"
-            />
-            <p>
-              <ul>
-                <li>
-                  <a href="https://stoplight.io/studio/">Stoplight Studio</a>
-                </li>
-                <li>
-                  <a href="https://github.com/thephpleague/openapi-psr7-validator">
-                    Openapi PSR7 Validator
-                  </a>
-                </li>
-              <li>
-                  <a hre="https://swagger.io/specification/" target="_blank"
-                  >OpenAPI 3.0 Specs</a>
-              </li>
-              </ul>
-
-
-            </p>
-              <small>
-                  Rif. <a target="_blank" href="https://alessandrolai.dev/talks/2021-sfday-api-contracts-openapi-during-development/">API contracts: Leveraging OpenAPI during API development Ale Lai ©</a>
-              </small>
-              <aside class="notes">
-                  <ul>
-                      <li>Come strumento per realizzare la parte di UI usiamo il design by contract (rif. slide ale maggio 2021)</li>
-                      <li>Openapi PSR7/validator per request in ingresso anche in prod, in test testiamo le response per assicurarci di deployare in accordo con il contratto</li>
-                      <li>Usiamo OpenAPI 3.0 perchè siamo legati da cebe/php-openapi (1.6), ma la prossima release supporterà 3.1 (chicca sul nome del file e gitlab)</li>
-                      <li>Le novità della 3.1 includono la possibilità di indicare tipi multipli, permettendo di esprimere il nullable</li>
-                  </ul>
-              </aside>
-          </section>
             <section>
+                <h3>The DDD "onion"</h3>
+                <img
+                        class="r-stretch"
+                        src="img/ddd-onion.png"
+                        width="47%"
+                        alt="DDD Onion - Jeffrey Palermo"
+                />
+                <aside class="notes">
+                    <ul>
+                        <li>Al centro il domain model, qui risiede la logica sottoforma di aggregati</li>
+                        <li>I servizi dell'applicazione, conoscono e interagiscono con gli aggregati per farli
+                            evolvere
+                        </li>
+                        <li>All'esterno abbiamo la UI/interfaccia di interazione con l'applicazione, i test, che mimano
+                            l'utente non conoscendo nulla dell'applicazione
+                        </li>
+                        <li>e infine l'infrastruttura, che è solo uno strumento per fare cose, che il db sia un file di
+                            testo o un server relazionale la logica di dominio non deve essere influenzata
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h3>Presentation: API</h3>
+                <h5>Open API + Stoplight</h5>
                 <img
                         style="float: left"
-                        src="img/stoplight-code.png"
+                        width="47%"
+                        src="img/stoplight-ui.png"
                         alt="Stoplight"
                 />
+                <ul class="fa-ul" style="margin: 2em 1em">
+                    <li>
+                        <span class="fa-li"><i class="fas fa-tools"></i></span>
+                        <a href="https://stoplight.io/studio/">Stoplight Studio</a>
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-check-double"></i></span>
+                        <a href="https://github.com/thephpleague/openapi-psr7-validator">
+                            Openapi PSR7 Validator
+                        </a>
+                    </li>
+                    <li>
+                        <span class="fa-li"><i class="fas fa-scroll"></i></span>
+                        <a href="https://swagger.io/specification/" target="_blank">
+                            OpenAPI 3.0 Specs
+                        </a>
+                    </li>
+                </ul>
+                <small style="display: block; clear: both">
+                    Rif.
+                    <a target="_blank"
+                       href="https://alessandrolai.dev/talks/2021-sfday-api-contracts-openapi-during-development/">
+                        API contracts: Leveraging OpenAPI during API development - A.Lai
+                    </a>
+                </small>
+                <aside class="notes">
+                    <ul>
+                        <li>Come strumento per realizzare la parte di UI usiamo il design by contract (rif. slide ale
+                            maggio 2021)
+                        </li>
+                        <li>Openapi PSR7/validator per request in ingresso anche in prod, in test testiamo le response
+                            per assicurarci di deployare in accordo con il contratto
+                        </li>
+                        <li>Usiamo OpenAPI 3.0 perchè siamo legati da cebe/php-openapi (1.6), ma la prossima release
+                            supporterà 3.1 (chicca sul nome del file e gitlab)
+                        </li>
+                        <li>Le novità della 3.1 includono la possibilità di indicare tipi multipli, permettendo di
+                            esprimere il nullable
+                        </li>
+                    </ul>
+                </aside>
             </section>
-          <section>
-            <img width="30%" src="img/ddd-onion-2.png" class="aside" />
-            <p>
-              <quote>
-                <em>
-                  "Nothing in an inner circle can know anything at all about
-                  something in an outer circle. That includes functions,
-                  classes, variables, or any other named software entity."
-                </em>
-                Robert C. Martin
-              </quote>
-            </p>
-              <aside class="notes">
-                Rinforzare il concetto che ciò che sta all'interno non conosce nulla dell'esterno, che è un utilizzatore.
-                  Nel nostro progetto abbiamo quindi cominciato a creare le classiche 3 directory radice, INFRASTRUCTURE/DOMAIN/APPLICATION
-                  Come possiamo fare però per evitare di contaminare i diversi namespace?
+            <section>
+                <table>
+                    <tr>
+                        <td width="40%">
+                            <img src="img/ddd-onion-2.png"/>
+                        </td>
+                        <td style="vertical-align: top; text-align: center">
+                            <blockquote style="display: block; padding: 2em 1em">
+                                <em>
+                                    "Nothing in an inner circle can know anything at all about
+                                    something in an outer circle.<br>
+                                    That includes functions, classes, variables, or any other named software entity."
+                                </em>
+                            </blockquote>
+                            <small>
+                                Robert C. Martin
+                            </small>
+                        </td>
+                    </tr>
+                </table>
+                <aside class="notes">
+                    Rinforzare il concetto che ciò che sta all'interno non conosce nulla dell'esterno, che è un
+                    utilizzatore.
+                    Nel nostro progetto abbiamo quindi cominciato a creare le classiche 3 directory radice,
+                    INFRASTRUCTURE/DOMAIN/APPLICATION
+                    Come possiamo fare però per evitare di contaminare i diversi namespace?
 
-                  Abbiamo bisogno di un tool che ci permetta di scrivere dei test di analisi statica per essere sicuri di
-                  non violare i principi del ddd.
+                    Abbiamo bisogno di un tool che ci permetta di scrivere dei test di analisi statica per essere sicuri
+                    di
+                    non violare i principi del ddd.
 
-                  Quindi affiancamo a test unitari, integrazione, funzionali, e ai test di analisi statica di php
-                  dei test di analisi statica architetturale
-              </aside>
+                    Quindi affiancamo a test unitari, integrazione, funzionali, e ai test di analisi statica di php
+                    dei test di analisi statica architetturale
+                </aside>
 
-          </section>
-          <section>
-              <aside class="notes">
-                  N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
+            </section>
+            <section>
+                <aside class="notes">
+                    N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
 
-                  N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
+                    N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
 
-                  MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with name App\Controller\*
-                  Inheritance: Classes with name App\Application\*Handler must extend class with name App\Application\AbstractHandler
-                  Composition: Classes with name App\Domain\Entity\* must implement class with name App\Domain\Entity\EntityInterface
+                    MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with
+                    name App\Controller\*
+                    Inheritance: Classes with name App\Application\*Handler must extend class with name
+                    App\Application\AbstractHandler
+                    Composition: Classes with name App\Domain\Entity\* must implement class with name
+                    App\Domain\Entity\EntityInterface
 
-                  Layered Architecture: ensure that the inner layers do not depend on the outer ones
+                    Layered Architecture: ensure that the inner layers do not depend on the outer ones
 
-                  Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes with name App\Infrastructure\*
-              </aside>
-            <h3>Enforcing the "onion"</h3>
-            <a href="https://github.com/carlosas/phpat">PHP AT</a>
-              <pre><code class="language-php">class CoreArchitectureTest extends ArchitectureTest
+                    Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes
+                    with name App\Infrastructure\*
+                </aside>
+                <h3>Enforcing the "onion"</h3>
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/carlosas/phpat">
+                    PHP AT
+                </a>
+                <pre><code class="stretch language-php">class CoreArchitectureTest extends ArchitectureTest
 {
     public function testCoreDomainDependencies(): Rule
     {
@@ -292,14 +321,13 @@
             ->canOnlyDependOn()
 
             ->classesThat(ClassSelector::domainClasses(ClassSelector::CONTEXT_CORE))
-
             ->classesThat(Selector::haveClassName(Assert::class))
             ->classesThat(Selector::haveClassName(UuidInterface::class))
 
             ->build();
     }
 }</code></pre>
-          </section>
+            </section>
             <section>
 
                 <h3>EventSauce</h3>
@@ -721,7 +749,7 @@ class OrdersReadModel implements MessageConsumer
 }</code></pre>
             </section>
         </section>
-        
+
         <section id="section-migration-strategy">
             <section style="text-align: left">
                 <ol class="sections-list">
@@ -737,7 +765,7 @@ class OrdersReadModel implements MessageConsumer
                 All this is great for a new project...<br>
                 <div class="fragment">
                     ...but what can we do in a running project?
-                    <img src="img/changing_wheels.webp" />
+                    <img src="img/changing_wheels.webp"/>
                 </div>
             </section>
             <section>
@@ -763,7 +791,7 @@ class OrdersReadModel implements MessageConsumer
             </section>
             <section>
                 <h3>The breakthrough</h3>
-                <img src="img/multiple-sources-of-lies.jpeg" class="stretch" />
+                <img src="img/multiple-sources-of-lies.jpeg" class="stretch"/>
                 <br>
                 <small>
                     "You have a single source of truth,
@@ -962,41 +990,41 @@ class ProductRepository
             </section>
             <section>
                 <h2>Thanks!</h2>
-<!--                <p>-->
-<!--                    Please rate my talk on Joind.in: <a href="https://joind.in/talk/TODO-CHANGEME">https://joind.in/talk/TODO-CHANGEME</a>-->
-<!--                </p>-->
-<!--                <img class="stretch" src="img/joindin-qr.png" alt="Joind.in link: https://joind.in/talk/TODO-CHANGEME">-->
+                <!--                <p>-->
+                <!--                    Please rate my talk on Joind.in: <a href="https://joind.in/talk/TODO-CHANGEME">https://joind.in/talk/TODO-CHANGEME</a>-->
+                <!--                </p>-->
+                <!--                <img class="stretch" src="img/joindin-qr.png" alt="Joind.in link: https://joind.in/talk/TODO-CHANGEME">-->
             </section>
-<!--            <section>-->
-<!--                <h2 style="margin-bottom: 2em">Questions?</h2>-->
-<!--                <h4>Contacts</h4>-->
-<!--                <div style="font-size: smaller">-->
-<!--                    <ul class="fa-ul">               -->
-<!--                        <li>-->
-<!--                            <span class="fa-li"><i class="fas fa-desktop"></i></span>-->
-<!--                            <a target="_blank" href="https://alessandrolai.dev">https://alessandrolai.dev</a>-->
-<!--                            <small style="vertical-align: middle">(slides & other talks here)</small>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <span class="fa-li"><i class="fas fa-envelope"></i></span>-->
-<!--                            <a target="_blank" href="mailto:alessandro.lai85@gmail.com">alessandro.lai85@gmail.com</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <span class="fa-li"><i class="fas fa-envelope"></i></span>-->
-<!--                            <a target="_blank" href="mailto:alessandro.lai@facile.it">alessandro.lai@facile.it</a>-->
-<!--                            <small style="vertical-align: middle">(we are hiring!)</small>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <span class="fa-li"><i class="fab fa-github"></i></span>-->
-<!--                            <a target="_blank" href="https://github.com/Jean85">@Jean85</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <span class="fa-li"><i class="fab fa-twitter"></i></span>-->
-<!--                            <a target="_blank" href="https://twitter.com/AlessandroLai">@AlessandroLai</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </section>-->
+            <!--            <section>-->
+            <!--                <h2 style="margin-bottom: 2em">Questions?</h2>-->
+            <!--                <h4>Contacts</h4>-->
+            <!--                <div style="font-size: smaller">-->
+            <!--                    <ul class="fa-ul">               -->
+            <!--                        <li>-->
+            <!--                            <span class="fa-li"><i class="fas fa-desktop"></i></span>-->
+            <!--                            <a target="_blank" href="https://alessandrolai.dev">https://alessandrolai.dev</a>-->
+            <!--                            <small style="vertical-align: middle">(slides & other talks here)</small>-->
+            <!--                        </li>-->
+            <!--                        <li>-->
+            <!--                            <span class="fa-li"><i class="fas fa-envelope"></i></span>-->
+            <!--                            <a target="_blank" href="mailto:alessandro.lai85@gmail.com">alessandro.lai85@gmail.com</a>-->
+            <!--                        </li>-->
+            <!--                        <li>-->
+            <!--                            <span class="fa-li"><i class="fas fa-envelope"></i></span>-->
+            <!--                            <a target="_blank" href="mailto:alessandro.lai@facile.it">alessandro.lai@facile.it</a>-->
+            <!--                            <small style="vertical-align: middle">(we are hiring!)</small>-->
+            <!--                        </li>-->
+            <!--                        <li>-->
+            <!--                            <span class="fa-li"><i class="fab fa-github"></i></span>-->
+            <!--                            <a target="_blank" href="https://github.com/Jean85">@Jean85</a>-->
+            <!--                        </li>-->
+            <!--                        <li>-->
+            <!--                            <span class="fa-li"><i class="fab fa-twitter"></i></span>-->
+            <!--                            <a target="_blank" href="https://twitter.com/AlessandroLai">@AlessandroLai</a>-->
+            <!--                        </li>-->
+            <!--                    </ul>-->
+            <!--                </div>-->
+            <!--            </section>-->
         </section>
     </div>
 </div>
@@ -1011,7 +1039,7 @@ class ProductRepository
     // - https://revealjs.com/config/
     Reveal.initialize({
         hash: true,
-        
+
         width: 1280,
         height: 720,
 
