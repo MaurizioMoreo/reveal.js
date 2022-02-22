@@ -71,7 +71,7 @@
             </section>
             <section>
                 <h3>No! We should start from here</h3>
-                <p>Create a Task  for problem analysis</p>
+                <p>We need to create a TaskForce for problem analysis</p>
                 <img
                         class="r-stretch"
                         src="img/domain-and-devs_1.png"
@@ -79,8 +79,8 @@
                 />
             </section>
             <section>
-                <h3>Well, now we start next ?</h3>
-                <p>We know the problem, how to develop it</p>
+                <h3>Well, now we start, next step?</h3>
+                <p>We know the problem, how do we develop it?</p>
                 <img
                         class="r-stretch"
                         src="img/which-approach.png"
@@ -113,7 +113,7 @@
                 <p>To follow this approach we need 🛠</p>
                 <hr>
                 <p>
-                    Because today
+                    Because nowadays
                     <br>
                     to develop software ready to compete
                 </p>
@@ -123,7 +123,7 @@
                 </p>
                 <hr>
                 <p>
-                    We need a robust mechanism that supports the change
+                    We need a robust mechanism that supports us int the change
                 </p>
             </section>
             <section>
@@ -154,7 +154,7 @@
 
             <section>
                 <h3>Domain Driven Design + CQRS </h3>
-                <p>Write / Read path and Command as Business concept </p>
+                <p>Write / Read path and Commands as Business concepts </p>
                 <img
                         src="img/cqrs.png"
                         alt="CQRS simplified"
@@ -164,7 +164,7 @@
 
             <section>
                 <h3>Domain Driven Design + CQRS/ES </h3>
-                <p>Event as  Business concept and unique source truth</p>
+                <p>Events as  Business concepts and unique source truth</p>
                 <img
                         src="img/cqrs_es.png"
                         alt="CQRS/ES simplified"
@@ -275,9 +275,16 @@
                 />
                 <aside class="notes">
                     <ul>
-                        <li>1. aggregati e logica dominio</li>
-                        <li>2. usano gli aggregati e transizioni</li>
-                        <li>3. UI, TEST, INFRASTRUCTURE</li>
+                        <li>Al centro il domain model, qui risiede la logica sottoforma di aggregati</li>
+                        <li>I servizi dell'applicazione, conoscono e interagiscono con gli aggregati per farli
+                            evolvere
+                        </li>
+                        <li>All'esterno abbiamo la UI/interfaccia di interazione con l'applicazione, i test, che mimano
+                            l'utente non conoscendo nulla dell'applicazione
+                        </li>
+                        <li>e infine l'infrastruttura, che è solo uno strumento per fare cose, che il db sia un file di
+                            testo o un server relazionale la logica di dominio non deve essere influenzata
+                        </li>
                     </ul>
                 </aside>
             </section>
@@ -317,12 +324,18 @@
                 </small>
                 <aside class="notes">
                     <ul>
-                        <ul>
-                            <li>design by contract (rif. slide ale maggio 2021)</li>
-                            <li>Openapi PSR7/validator per request in prod, response in test</li>
-                            <li>OpenAPI 3.0 - cebe/php-openapi (1.6)</li>
-                            <li>3.1: tipi multipli - nullable</li>
-                        </ul>
+                        <li>Come strumento per realizzare la parte di UI usiamo il design by contract (rif. slide ale
+                            maggio 2021)
+                        </li>
+                        <li>Openapi PSR7/validator per request in ingresso anche in prod, in test testiamo le response
+                            per assicurarci di deployare in accordo con il contratto
+                        </li>
+                        <li>Usiamo OpenAPI 3.0 perchè siamo legati da cebe/php-openapi (1.6), ma la prossima release
+                            supporterà 3.1 (chicca sul nome del file e gitlab)
+                        </li>
+                        <li>Le novità della 3.1 includono la possibilità di indicare tipi multipli, permettendo di
+                            esprimere il nullable
+                        </li>
                     </ul>
                 </aside>
             </section>
@@ -347,22 +360,38 @@
                     </tr>
                 </table>
                 <aside class="notes">
-                    <ul>
-                        <li>INFRASTRUCTURE/DOMAIN/APPLICATION</li>
-                        <li>analisi statica architettura?</li>
-                    </ul>
+                    Rinforzare il concetto che ciò che sta all'interno non conosce nulla dell'esterno, che è un
+                    utilizzatore.
+                    Nel nostro progetto abbiamo quindi cominciato a creare le classiche 3 directory radice,
+                    INFRASTRUCTURE/DOMAIN/APPLICATION
+                    Come possiamo fare però per evitare di contaminare i diversi namespace?
+
+                    Abbiamo bisogno di un tool che ci permetta di scrivere dei test di analisi statica per essere sicuri
+                    di
+                    non violare i principi del ddd.
+
+                    Quindi affiancamo a test unitari, integrazione, funzionali, e ai test di analisi statica di php
+                    dei test di analisi statica architetturale
                 </aside>
 
             </section>
             <section>
                 <aside class="notes">
-                    <ul>
-                        <li>ClassSelector nostra</li>
-                        <li>No schizzinosi</li>
-                        <li>Enforcing ADR</li>
-                        <li>must not depend</li>
-                        <li>must extends/implements</li>
-                    </ul>
+                    N.B. Nota con ClassSelector che è nostra, ma è solo uno shortcut per il Selector.
+
+                    N.B.B Non potremo essere cosi schizzinosi all'inizio, ma ci da una struttura.
+
+                    MVC: Classes with name App\Model\* and classes with name App\View\* must not depend on classes with
+                    name App\Controller\*
+                    Inheritance: Classes with name App\Application\*Handler must extend class with name
+                    App\Application\AbstractHandler
+                    Composition: Classes with name App\Domain\Entity\* must implement class with name
+                    App\Domain\Entity\EntityInterface
+
+                    Layered Architecture: ensure that the inner layers do not depend on the outer ones
+
+                    Classes with name App\Domain\* must not depend on classes with name App\Application\* and classes
+                    with name App\Infrastructure\*
                 </aside>
                 <h3>Enforcing the "onion"</h3>
                 <i class="fab fa-github"></i>
