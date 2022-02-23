@@ -4943,6 +4943,7 @@ pre.composer-require > code {
   padding: 1em; }
 
 ol.sections-list {
+  padding-left: 1em;
   list-style-type: decimal-leading-zero;
   text-align: left;
   color: #bfbfbf; }
